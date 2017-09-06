@@ -95,9 +95,8 @@ $(document).ready( function() {
       var list = $('#people');
       list.empty();
       people.forEach( function(peep) {
-        var li = '<li data-person-id="' + peep.id + '">' + '<div class="person-item">' + peep.name + ' - ' + peep.age + '</div>' +
-        '<button class="btn" id="edit-person">' + 'Edit' + '</button>' +
-        '<button class="btn" id="delete-person">' + 'Delete' + '</button>' + '</li>';
+        var li = '<li data-person-id="' + peep.id + '">' + peep.name + ' - ' + peep.age + '<br>' +
+        '<button class="btn" id="edit-person">Edit</button><button class="btn" id="delete-person">Delete</button></li><br>';
         list.append(li);
       });
     });

@@ -1,2 +1,12 @@
 @import 'materialize';
 @import 'careers';
+
+
+body {
+  background: image-url('computer.jpg');
+  background-size: cover;
+}
+
+.card {
+  background: rgba(44, 144, 166, 0.75);
+}
