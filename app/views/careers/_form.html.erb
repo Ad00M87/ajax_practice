@@ -1,0 +1,11 @@
+<div id="career-form">
+  <%= form_for @career do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <br>
+    <%= f.label :field %>
+    <%= f.text_field :field %>
+    <br>
+    <%= f.submit nil, class: 'btn' %>
+  <% end %>
+</div>
