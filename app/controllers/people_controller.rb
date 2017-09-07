@@ -10,6 +10,12 @@ class PeopleController < ApplicationController
     render json: @person
   end
 
+  def form
+    @career = Career.find(params[:career_id])
+    @person = params[:id] ? Person.find(params[:id]) : @career.people.new
+    render partial: 'form'
+  end
+
   def update
     if @person.update(person_params)
       render json: @person
@@ -19,7 +25,7 @@ class PeopleController < ApplicationController
   end
 
   def create
-    @person = @career.people.new(peson_params)
+    @person = @career.people.new(person_params)
     if @person.save
       render json: @person
     else

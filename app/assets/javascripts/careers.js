@@ -3,6 +3,7 @@
 
 var currentCareer = {};
 var showForm = false;
+var showButton = false;
 var editingCareer;
 
 $(document).ready( function() {
@@ -36,7 +37,7 @@ $(document).ready( function() {
         type: 'GET',
         data: data
       }).done( function(html) {
-        $('#toggle').after(html);
+        $('#on_off').after(html);
       });
     }
   }
@@ -87,6 +88,7 @@ $(document).ready( function() {
   $(document).on('click', '.career-item', function() {
     currentCareer.id = this.dataset.id;
     currentCareer.name = this.dataset.name;
+    addingPeople();
     $.ajax({
       url: '/careers/' + currentCareer.id + '/people',
       type: 'GET'
@@ -95,11 +97,20 @@ $(document).ready( function() {
       var list = $('#people');
       list.empty();
       people.forEach( function(peep) {
-        var li = '<li data-person-id="' + peep.id + '">' + peep.name + ' - ' + peep.age + '<br>' +
+        var li = '<li class="peep" data-id="' + peep.career_id + '" data-person-id="' + peep.id + '">' + peep.name + ' - ' + peep.age + '<br>' +
         '<button class="btn" id="edit-person">Edit</button><button class="btn" id="delete-person">Delete</button></li><br>';
         list.append(li);
       });
     });
   });
+
+  function addingPeople() {
+    showButton = !showButton;
+    if (showButton) {
+      document.getElementById('on_off').style.display = "inline";
+    }
+
+    }
+
 
 });

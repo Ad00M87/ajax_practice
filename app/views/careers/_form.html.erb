@@ -1,11 +1,15 @@
-<div id="career-form">
-  <%= form_for @career do |f| %>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-    <br>
-    <%= f.label :field %>
-    <%= f.text_field :field %>
-    <br>
-    <%= f.submit nil, class: 'btn' %>
-  <% end %>
+<div class="row">
+  <div class="col s12 m6">
+    <div id="career-form">
+      <%= form_for @career do |f| %>
+      <%= f.label :title, 'TITLE', class: 'white-text' %>
+      <%= f.text_field :title %>
+      <br>
+      <%= f.label :field, 'FIELD', class: 'white-text' %>
+      <%= f.text_field :field %>
+      <br>
+      <%= f.submit nil, class: 'btn' %>
+      <% end %>
+    </div>
+  </div>
 </div>

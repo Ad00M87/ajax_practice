@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   get 'career_form', to: 'careers#form'
 
+  get 'person_form', to: 'people#form'
+
   resources :careers do
     resources :people
   end

@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col s12 m6">
+    <div id="person-form">
+      <%= form_for [@career, @person ] do |f| %>
+      <%= f.label :name, 'NAME', class: 'white-text' %>
+      <%= f.text_field :name %>
+      <br>
+      <%= f.label :age, 'AGE', class: 'white-text' %>
+      <%= f.text_field :age %>
+      <br>
+      <%= f.submit nil, class: 'btn' %>
+      <% end %>
+    </div>
+  </div>
+</div>
